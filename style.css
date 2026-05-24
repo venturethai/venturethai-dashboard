@@ -127,6 +127,25 @@ header button:hover{
     line-height:1.6;
 }
 
+.card h3{
+    margin-top:20px;
+    color:#38bdf8;
+}
+
+.stats{
+    margin-top:20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.stats span{
+    background:#0f172a;
+    padding:10px;
+    border-radius:10px;
+    font-size:14px;
+}
+
 /* DARK MODE */
 
 .dark{
