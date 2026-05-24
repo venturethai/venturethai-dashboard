@@ -27,3 +27,25 @@ searchBar.addEventListener("keyup", () => {
     });
 
 });
+
+/* POPUP */
+
+const startupCards = document.querySelectorAll(".card");
+
+startupCards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        const startupName = card.querySelector("h2").textContent;
+
+        alert(
+            startupName +
+            "\n\nFounder: John Doe" +
+            "\nMarket: Thailand" +
+            "\nPotential: High Growth Startup" +
+            "\nLooking for investors 🚀"
+        );
+
+    });
+
+});
