@@ -28,7 +28,7 @@ searchBar.addEventListener("keyup", () => {
 
 });
 
-/* POPUP */
+/* MODAL */
 
 const startupCards = document.querySelectorAll(".card");
 
@@ -38,13 +38,39 @@ startupCards.forEach(card => {
 
         const startupName = card.querySelector("h2").textContent;
 
-        alert(
-            startupName +
-            "\n\nFounder: John Doe" +
-            "\nMarket: Thailand" +
-            "\nPotential: High Growth Startup" +
-            "\nLooking for investors 🚀"
-        );
+        const modal = document.createElement("div");
+
+        modal.classList.add("modal");
+
+        modal.innerHTML = `
+        
+            <div class="modalContent">
+
+                <h1>${startupName}</h1>
+
+                <p>
+                    High-growth Thai startup looking for investors.
+                </p>
+
+                <ul>
+                    <li>Market: Thailand</li>
+                    <li>Stage: Early Growth</li>
+                    <li>Potential: High</li>
+                    <li>Industry: Technology</li>
+                </ul>
+
+                <button id="closeModal">Close</button>
+
+            </div>
+
+        `;
+
+        document.body.appendChild(modal);
+
+        document.getElementById("closeModal")
+        .addEventListener("click", () => {
+            modal.remove();
+        });
 
     });
 
