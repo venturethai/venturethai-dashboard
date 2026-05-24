@@ -1,29 +1,45 @@
-body{
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
     font-family:Arial;
-    background:#f4f7fb;
+}
+
+body{
+    background:#0f172a;
+    color:white;
 }
 
 /* NAVBAR */
 
 nav{
-    background:white;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 50px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    padding:25px 60px;
+    background:#111827;
+    position:sticky;
+    top:0;
+}
+
+nav h2{
+    color:#38bdf8;
+    font-size:28px;
 }
 
 nav ul{
     display:flex;
     list-style:none;
-    gap:25px;
+    gap:30px;
 }
 
 nav li{
-    font-weight:bold;
     cursor:pointer;
+    transition:0.3s;
+}
+
+nav li:hover{
+    color:#38bdf8;
 }
 
 #darkModeBtn{
@@ -36,69 +52,97 @@ nav li{
 /* HERO */
 
 header{
-    background:linear-gradient(135deg,#000000,#1c1c1c);
-    color:white;
+    min-height:85vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
-    padding:120px 20px;
+    padding:20px;
+    background:linear-gradient(to bottom,#0f172a,#020617);
 }
 
 header h1{
-    font-size:60px;
+    font-size:75px;
+    max-width:900px;
+    line-height:1.1;
 }
 
 header p{
+    margin-top:25px;
     font-size:22px;
-    color:#cccccc;
+    color:#cbd5e1;
+    max-width:700px;
 }
 
 header button{
-    margin-top:20px;
-    padding:15px 35px;
+    margin-top:35px;
+    padding:18px 40px;
     border:none;
-    border-radius:12px;
+    border-radius:14px;
+    background:#38bdf8;
+    color:white;
     font-size:18px;
     font-weight:bold;
     cursor:pointer;
+    transition:0.3s;
 }
 
-/* CARDS */
+header button:hover{
+    transform:scale(1.05);
+    background:#0ea5e9;
+}
+
+/* STARTUPS */
 
 .companies{
     display:flex;
     justify-content:center;
+    gap:30px;
     flex-wrap:wrap;
-    gap:25px;
-    padding:70px 30px;
+    padding:80px 40px;
 }
 
 .card{
-    background:white;
-    width:300px;
-    padding:25px;
+    width:320px;
+    background:#1e293b;
+    padding:30px;
     border-radius:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+    border:1px solid #334155;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#38bdf8;
+}
+
+.card h2{
+    margin-bottom:15px;
+    color:#38bdf8;
 }
 
 .card p{
-    color:#555;
+    color:#cbd5e1;
+    line-height:1.6;
 }
 
 /* DARK MODE */
 
 .dark{
-    background:#121212;
-    color:white;
+    background:white;
+    color:black;
 }
 
 .dark nav{
-    background:#1f1f1f;
+    background:#f1f5f9;
 }
 
 .dark .card{
-    background:#1f1f1f;
-    color:white;
+    background:white;
+    color:black;
 }
 
 .dark .card p{
-    color:#cccccc;
+    color:#444;
 }
