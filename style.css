@@ -5,6 +5,10 @@
     font-family:Arial;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:#0f172a;
     color:white;
@@ -20,6 +24,7 @@ nav{
     background:#111827;
     position:sticky;
     top:0;
+    z-index:1000;
 }
 
 nav h2{
@@ -40,6 +45,7 @@ nav li{
 
 nav li:hover{
     color:#38bdf8;
+    transform:translateY(-2px);
 }
 
 #darkModeBtn{
@@ -60,6 +66,8 @@ header{
     text-align:center;
     padding:20px;
     background:linear-gradient(to bottom,#0f172a,#020617);
+
+    animation:fadeIn 1s ease;
 }
 
 header h1{
@@ -119,15 +127,18 @@ header button:hover{
     background:#1e293b;
     padding:30px;
     border-radius:20px;
-    transition:0.3s;
+    transition:0.4s;
     border:1px solid #334155;
     overflow:hidden;
     cursor:pointer;
+
+    animation:slideUp 1s ease;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-15px) scale(1.03);
     border-color:#38bdf8;
+    box-shadow:0 0 30px rgba(56,189,248,0.3);
 }
 
 .card img{
@@ -180,6 +191,7 @@ header button:hover{
 
 .investBtn:hover{
     background:#0ea5e9;
+    transform:scale(1.03);
 }
 
 /* MODAL */
@@ -194,6 +206,8 @@ header button:hover{
     display:flex;
     justify-content:center;
     align-items:center;
+
+    animation:fadeIn 0.3s ease;
 }
 
 .modalContent{
@@ -202,6 +216,8 @@ header button:hover{
     border-radius:20px;
     width:400px;
     max-width:90%;
+
+    animation:slideUp 0.4s ease;
 }
 
 .modalContent h1{
@@ -229,6 +245,30 @@ header button:hover{
     color:white;
     font-weight:bold;
     cursor:pointer;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes slideUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 /* DARK MODE */
