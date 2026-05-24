@@ -12,40 +12,45 @@ html{
 body{
     background:#0f172a;
     color:white;
+    overflow-x:hidden;
 }
 
 /* NAVBAR */
 
 nav{
+    position:fixed;
+    top:0;
+    width:100%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:25px 60px;
-    background:#111827;
-    position:sticky;
-    top:0;
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(10px);
     z-index:1000;
+    border-bottom:1px solid #1e293b;
 }
 
 nav h2{
     color:#38bdf8;
-    font-size:28px;
+    font-size:30px;
 }
 
 nav ul{
     display:flex;
     list-style:none;
-    gap:30px;
+    gap:35px;
 }
 
-nav li{
-    cursor:pointer;
+nav a{
+    text-decoration:none;
+    color:white;
     transition:0.3s;
+    font-size:17px;
 }
 
-nav li:hover{
+nav a:hover{
     color:#38bdf8;
-    transform:translateY(-2px);
 }
 
 #darkModeBtn{
@@ -53,37 +58,39 @@ nav li:hover{
     border:none;
     border-radius:10px;
     cursor:pointer;
+    font-size:18px;
 }
 
 /* HERO */
 
 header{
-    min-height:85vh;
+    min-height:100vh;
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:20px;
-    background:linear-gradient(to bottom,#0f172a,#020617);
-
-    animation:fadeIn 1s ease;
+    padding:120px 20px 60px;
+    background:
+    radial-gradient(circle at top,#1e3a8a,#0f172a 60%);
 }
 
-header h1{
-    font-size:75px;
-    max-width:900px;
+.heroText{
+    animation:fadeUp 1s ease;
+}
+
+.heroText h1{
+    font-size:85px;
+    max-width:1000px;
     line-height:1.1;
 }
 
-header p{
-    margin-top:25px;
-    font-size:22px;
+.heroText p{
+    margin-top:30px;
+    font-size:24px;
     color:#cbd5e1;
-    max-width:700px;
 }
 
-header button{
+.heroText button{
     margin-top:35px;
     padding:18px 40px;
     border:none;
@@ -96,14 +103,15 @@ header button{
     transition:0.3s;
 }
 
-header button:hover{
+.heroText button:hover{
     transform:scale(1.05);
     background:#0ea5e9;
+    box-shadow:0 0 30px rgba(56,189,248,0.4);
 }
 
 #searchBar{
     margin-top:30px;
-    width:400px;
+    width:500px;
     max-width:90%;
     padding:18px;
     border:none;
@@ -112,49 +120,84 @@ header button:hover{
     outline:none;
 }
 
+/* STATS */
+
+.statsSection{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    padding:80px 20px;
+}
+
+.statBox{
+    width:250px;
+    padding:40px;
+    background:#1e293b;
+    border-radius:20px;
+    text-align:center;
+    border:1px solid #334155;
+    transition:0.3s;
+}
+
+.statBox:hover{
+    transform:translateY(-10px);
+    border-color:#38bdf8;
+}
+
+.statBox h1{
+    font-size:50px;
+    color:#38bdf8;
+}
+
+.statBox p{
+    margin-top:10px;
+    color:#cbd5e1;
+}
+
 /* STARTUPS */
 
 .companies{
     display:flex;
     justify-content:center;
-    gap:30px;
+    gap:35px;
     flex-wrap:wrap;
-    padding:80px 40px;
+    padding:100px 30px;
 }
 
 .card{
-    width:320px;
+    width:340px;
     background:#1e293b;
-    padding:30px;
-    border-radius:20px;
+    padding:35px;
+    border-radius:25px;
     transition:0.4s;
     border:1px solid #334155;
     overflow:hidden;
     cursor:pointer;
 
-    animation:slideUp 1s ease;
+    animation:fadeUp 1s ease;
 }
 
 .card:hover{
     transform:translateY(-15px) scale(1.03);
     border-color:#38bdf8;
-    box-shadow:0 0 30px rgba(56,189,248,0.3);
+    box-shadow:0 0 35px rgba(56,189,248,0.25);
 }
 
 .card img{
-    width:70px;
-    height:70px;
-    margin-bottom:20px;
+    width:75px;
+    height:75px;
+    margin-bottom:25px;
 }
 
 .card h2{
-    margin-bottom:15px;
     color:#38bdf8;
+    margin-bottom:15px;
 }
 
 .card p{
     color:#cbd5e1;
-    line-height:1.6;
+    line-height:1.7;
 }
 
 .card h3{
@@ -166,12 +209,12 @@ header button:hover{
     margin-top:20px;
     display:flex;
     flex-direction:column;
-    gap:10px;
+    gap:12px;
 }
 
 .stats span{
     background:#0f172a;
-    padding:10px;
+    padding:12px;
     border-radius:10px;
     font-size:14px;
 }
@@ -179,9 +222,9 @@ header button:hover{
 .investBtn{
     margin-top:25px;
     width:100%;
-    padding:15px;
+    padding:16px;
     border:none;
-    border-radius:12px;
+    border-radius:14px;
     background:#38bdf8;
     color:white;
     font-weight:bold;
@@ -192,6 +235,85 @@ header button:hover{
 .investBtn:hover{
     background:#0ea5e9;
     transform:scale(1.03);
+}
+
+/* INFO */
+
+.infoSection{
+    padding:140px 20px;
+    text-align:center;
+}
+
+.infoSection h1{
+    font-size:60px;
+    color:#38bdf8;
+}
+
+.infoSection p{
+    margin-top:25px;
+    font-size:24px;
+    color:#cbd5e1;
+}
+
+/* CONTACT */
+
+.contactSection{
+    padding:120px 20px;
+    text-align:center;
+}
+
+.contactSection h1{
+    font-size:55px;
+    margin-bottom:50px;
+    color:#38bdf8;
+}
+
+form{
+    max-width:600px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+form input,
+form textarea{
+    padding:18px;
+    border:none;
+    border-radius:14px;
+    font-size:16px;
+    outline:none;
+}
+
+form textarea{
+    min-height:180px;
+    resize:none;
+}
+
+form button{
+    padding:18px;
+    border:none;
+    border-radius:14px;
+    background:#38bdf8;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+form button:hover{
+    background:#0ea5e9;
+    transform:scale(1.03);
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px;
+    text-align:center;
+    border-top:1px solid #1e293b;
+    color:#94a3b8;
 }
 
 /* MODAL */
@@ -206,18 +328,17 @@ header button:hover{
     display:flex;
     justify-content:center;
     align-items:center;
-
-    animation:fadeIn 0.3s ease;
+    z-index:2000;
 }
 
 .modalContent{
     background:#1e293b;
     padding:40px;
     border-radius:20px;
-    width:400px;
+    width:420px;
     max-width:90%;
 
-    animation:slideUp 0.4s ease;
+    animation:fadeUp 0.4s ease;
 }
 
 .modalContent h1{
@@ -226,8 +347,8 @@ header button:hover{
 }
 
 .modalContent p{
-    margin-bottom:20px;
     color:#cbd5e1;
+    margin-bottom:20px;
 }
 
 .modalContent ul{
@@ -243,23 +364,12 @@ header button:hover{
     border-radius:12px;
     background:#38bdf8;
     color:white;
-    font-weight:bold;
     cursor:pointer;
 }
 
-/* ANIMATIONS */
+/* ANIMATION */
 
-@keyframes fadeIn{
-    from{
-        opacity:0;
-    }
-
-    to{
-        opacity:1;
-    }
-}
-
-@keyframes slideUp{
+@keyframes fadeUp{
     from{
         opacity:0;
         transform:translateY(40px);
@@ -271,6 +381,28 @@ header button:hover{
     }
 }
 
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .heroText h1{
+        font-size:55px;
+    }
+
+    nav{
+        padding:20px;
+    }
+
+    nav ul{
+        gap:15px;
+    }
+
+    .infoSection h1,
+    .contactSection h1{
+        font-size:40px;
+    }
+}
+
 /* DARK MODE */
 
 .dark{
@@ -279,14 +411,18 @@ header button:hover{
 }
 
 .dark nav{
-    background:#f1f5f9;
+    background:rgba(255,255,255,0.95);
 }
 
-.dark .card{
+.dark .card,
+.dark .statBox,
+.dark .modalContent{
     background:white;
     color:black;
 }
 
-.dark .card p{
+.dark .card p,
+.dark .infoSection p,
+.dark footer{
     color:#444;
 }

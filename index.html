@@ -11,34 +11,75 @@
 
 <body>
 
+    <!-- NAVBAR -->
+
     <nav>
+
         <h2>VentureThai</h2>
 
         <ul>
-            <li>Home</li>
-            <li>Startups</li>
-            <li>Investors</li>
-            <li>Contact</li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#startups">Startups</a></li>
+            <li><a href="#investors">Investors</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
 
         <button id="darkModeBtn">🌙</button>
+
     </nav>
 
-    <header>
+    <!-- HERO -->
 
-        <h1>Discover Thailand's Next Unicorns</h1>
+    <header id="home">
 
-        <p>
-            Connecting investors with high-growth startups across Thailand.
-        </p>
+        <div class="heroText">
 
-        <input type="text" placeholder="Search startups..." id="searchBar">
+            <h1>
+                Discover Thailand's Next Unicorn Startups
+            </h1>
 
-        <button>Explore Startups</button>
+            <p>
+                Connecting investors with Thailand’s fastest-growing startups.
+            </p>
+
+            <input
+                type="text"
+                placeholder="Search startups..."
+                id="searchBar"
+            >
+
+            <button>
+                Explore Startups
+            </button>
+
+        </div>
 
     </header>
 
-    <section class="companies">
+    <!-- STATS -->
+
+    <section class="statsSection">
+
+        <div class="statBox">
+            <h1>120+</h1>
+            <p>Startups</p>
+        </div>
+
+        <div class="statBox">
+            <h1>$45M</h1>
+            <p>Funding Raised</p>
+        </div>
+
+        <div class="statBox">
+            <h1>80+</h1>
+            <p>Investors</p>
+        </div>
+
+    </section>
+
+    <!-- STARTUPS -->
+
+    <section class="companies" id="startups">
 
         <div class="card">
 
@@ -46,7 +87,9 @@
 
             <h2>ThaiPay</h2>
 
-            <p>Fintech startup transforming digital payments.</p>
+            <p>
+                Fintech startup transforming digital payments.
+            </p>
 
             <h3>Series A</h3>
 
@@ -55,9 +98,9 @@
                 <span>Raised: $2M</span>
             </div>
 
-            <a href="#">
-                <button class="investBtn">Contact Startup</button>
-            </a>
+            <button class="investBtn">
+                Contact Startup
+            </button>
 
         </div>
 
@@ -67,7 +110,9 @@
 
             <h2>Bangkok AI</h2>
 
-            <p>AI startup helping businesses automate operations.</p>
+            <p>
+                AI startup helping businesses automate operations.
+            </p>
 
             <h3>Seed Stage</h3>
 
@@ -76,9 +121,9 @@
                 <span>Raised: $800K</span>
             </div>
 
-            <a href="#">
-                <button class="investBtn">Contact Startup</button>
-            </a>
+            <button class="investBtn">
+                Contact Startup
+            </button>
 
         </div>
 
@@ -88,7 +133,9 @@
 
             <h2>EcoMove</h2>
 
-            <p>Sustainable transportation startup expanding across SEA.</p>
+            <p>
+                Sustainable transportation startup across SEA.
+            </p>
 
             <h3>Series B</h3>
 
@@ -97,13 +144,57 @@
                 <span>Raised: $5M</span>
             </div>
 
-            <a href="#">
-                <button class="investBtn">Contact Startup</button>
-            </a>
+            <button class="investBtn">
+                Contact Startup
+            </button>
 
         </div>
 
     </section>
+
+    <!-- INVESTORS -->
+
+    <section class="infoSection" id="investors">
+
+        <h1>Built For Investors</h1>
+
+        <p>
+            Discover high-growth startups and connect directly with founders.
+        </p>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section class="contactSection" id="contact">
+
+        <h1>Contact VentureThai</h1>
+
+        <form>
+
+            <input type="text" placeholder="Your Name">
+
+            <input type="email" placeholder="Your Email">
+
+            <textarea placeholder="Message"></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2025 VentureThai. All rights reserved.
+        </p>
+
+    </footer>
 
     <script src="script.js"></script>
 
