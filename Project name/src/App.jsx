@@ -12,10 +12,6 @@ function App() {
     alert(
       `Startup Submitted:\n\nName: ${startupName}\nIndustry: ${industry}\nDescription: ${description}`
     );
-
-    setStartupName("");
-    setIndustry("");
-    setDescription("");
   };
 
   return (
@@ -28,22 +24,18 @@ function App() {
         fontFamily: "Arial"
       }}
     >
+      <h1>VentureThai</h1>
 
-      <h1 style={{ marginBottom: "10px" }}>
-        VentureThai
-      </h1>
-
-      <p style={{ marginBottom: "40px" }}>
-        Submit your startup to Thailand’s top investors.
-      </p>
+      <p>Submit your startup to investors.</p>
 
       <form
         onSubmit={handleSubmit}
         style={{
-          maxWidth: "500px",
+          marginTop: "30px",
           display: "flex",
           flexDirection: "column",
-          gap: "20px"
+          gap: "20px",
+          maxWidth: "500px"
         }}
       >
 
@@ -55,8 +47,7 @@ function App() {
           style={{
             padding: "15px",
             borderRadius: "10px",
-            border: "none",
-            fontSize: "16px"
+            border: "none"
           }}
         />
 
@@ -68,8 +59,7 @@ function App() {
           style={{
             padding: "15px",
             borderRadius: "10px",
-            border: "none",
-            fontSize: "16px"
+            border: "none"
           }}
         />
 
@@ -81,8 +71,7 @@ function App() {
           style={{
             padding: "15px",
             borderRadius: "10px",
-            border: "none",
-            fontSize: "16px"
+            border: "none"
           }}
         />
 
@@ -91,9 +80,9 @@ function App() {
           style={{
             padding: "15px",
             background: "#38bdf8",
+            color: "white",
             border: "none",
             borderRadius: "10px",
-            color: "white",
             fontSize: "18px",
             cursor: "pointer"
           }}
@@ -102,7 +91,6 @@ function App() {
         </button>
 
       </form>
-
     </div>
   );
 }
