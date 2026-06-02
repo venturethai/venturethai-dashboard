@@ -222,11 +222,10 @@ document.getElementById("exploreBtn");
 
 exploreBtn.addEventListener("click", () => {
 
-    document
-    .getElementById("startups")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
+    window.open(
+        "http://localhost:5173/",
+        "_blank"
+    );
 
 });
 
@@ -244,5 +243,17 @@ form.addEventListener("submit", (e) => {
     );
 
     form.reset();
+
+});
+
+const submitBtn =
+document.getElementById("submitBtn");
+
+submitBtn.addEventListener("click", () => {
+
+    window.open(
+        "http://localhost:5173/",
+        "_blank"
+    );
 
 });
