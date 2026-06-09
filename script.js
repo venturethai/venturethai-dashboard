@@ -221,12 +221,10 @@ const exploreBtn =
 document.getElementById("exploreBtn");
 
 exploreBtn.addEventListener("click", () => {
-
     window.open(
-        "http://localhost:5173/",
+        "https://venturethai-dashboard-v2.vercel.app",
         "_blank"
     );
-
 });
 
 /* CONTACT FORM */
@@ -250,10 +248,8 @@ const submitBtn =
 document.getElementById("submitBtn");
 
 submitBtn.addEventListener("click", () => {
-
     window.open(
-        "http://localhost:5173/",
+        "https://venturethai-dashboard-v2.vercel.app",
         "_blank"
     );
-
 });
