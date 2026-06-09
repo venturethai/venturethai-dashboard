@@ -6,6 +6,7 @@ function App() {
   const [page, setPage] = useState("dashboard");
   const [startups, setStartups] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [selectedStartup, setSelectedStartup] = useState(null);
 
   const [search, setSearch] = useState("");
   const [industryFilter, setIndustryFilter] = useState("All");
@@ -286,15 +287,17 @@ const featuredStartup = [...filteredStartups].sort(
           </div>
 
           {filteredStartups.map((startup) => (
-            <div
-              key={startup.id}
+  <div
+    key={startup.id}
+    onClick={() => setSelectedStartup(startup)}
               style={{
-                background: "white",
-                color: "#111827",
-                borderRadius: "12px",
-                padding: "20px",
-                marginBottom: "20px",
-              }}
+  background: "white",
+  color: "#111827",
+  borderRadius: "12px",
+  padding: "20px",
+  marginBottom: "20px",
+  cursor: "pointer",
+}}
             >
               <div
                 style={{
@@ -409,6 +412,62 @@ const featuredStartup = [...filteredStartups].sort(
           </form>
         </>
       )}
+
+      {selectedStartup && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background: "rgba(0,0,0,0.7)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              background: "white",
+              color: "#111827",
+              padding: "30px",
+              borderRadius: "16px",
+              maxWidth: "700px",
+              width: "90%",
+            }}
+          >
+            <h2>{selectedStartup.startupName}</h2>
+
+            <p><strong>Industry:</strong> {selectedStartup.industry}</p>
+            <p><strong>Founder:</strong> {selectedStartup.founderName}</p>
+            <p><strong>Email:</strong> {selectedStartup.email}</p>
+            <p><strong>Website:</strong> {selectedStartup.website}</p>
+            <p><strong>Funding Stage:</strong> {selectedStartup.fundingStage}</p>
+            <p><strong>Valuation:</strong> {selectedStartup.valuation}</p>
+            <p><strong>Amount Raising:</strong> {selectedStartup.amountRaising}</p>
+            <p><strong>Location:</strong> {selectedStartup.location}</p>
+
+            <p>{selectedStartup.description}</p>
+
+            <button
+              onClick={() => setSelectedStartup(null)}
+              style={{
+                marginTop: "20px",
+                padding: "10px 20px",
+                background: "#2563eb",
+                color: "white",
+                border: "none",
+                borderRadius: "8px",
+                cursor: "pointer",
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
